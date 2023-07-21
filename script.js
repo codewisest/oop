@@ -9,3 +9,12 @@ console.log(chiji);
 
 const gloria = new Person('Gloria', 1994);
 console.log(gloria);
+
+// prototypes
+console.log(Person.prototype);
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthyear);
+};
+
+chiji.calcAge();
+console.log(chiji.__proto__);
