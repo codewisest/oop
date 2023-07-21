@@ -16,5 +16,7 @@ Person.prototype.calcAge = function () {
   console.log(2037 - this.birthyear);
 };
 
+Person.prototype.species = 'Homo Sapien';
 chiji.calcAge();
 console.log(chiji.__proto__);
+console.log(chiji.species);
