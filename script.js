@@ -52,8 +52,8 @@ const h1 = document.querySelector('h1');
 console.dir(h1);
 
 class PersonCl {
-  constructor(firstName, birthYear) {
-    this.firstName = firstName;
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
     this.birthYear = birthYear;
   }
 
@@ -64,12 +64,32 @@ class PersonCl {
   greet() {
     console.log(`Hello ${this.firstName}`);
   }
+
+  get age() {
+    return 2037 - this.birthYear;
+  }
+
+  set fullName(name) {
+    console.log(name);
+    if (name.includes(' ')) {
+      this._fullName = name;
+    } else {
+      alert(`${name} is not a full name`);
+    }
+  }
+
+  get fullName() {
+    return this._fullName;
+  }
 }
 
-const chizoba = new PersonCl('Chizoba', 1994);
+const chizoba = new PersonCl('Chizoba Ugwu', 1994);
 chizoba.calcAge();
 console.log(chizoba);
 chizoba.greet();
+console.log(chizoba.age);
+
+const walter = new PersonCl('Walter', 1965);
 
 // getters and setters
 const account = {
