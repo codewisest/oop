@@ -50,3 +50,23 @@ console.log(arr.unique());
 
 const h1 = document.querySelector('h1');
 console.dir(h1);
+
+class PersonCl {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+
+  greet() {
+    console.log(`Hello ${this.firstName}`);
+  }
+}
+
+const chizoba = new PersonCl('Chizoba', 1994);
+chizoba.calcAge();
+console.log(chizoba);
+chizoba.greet();
