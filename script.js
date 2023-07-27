@@ -10,6 +10,13 @@ console.log(chiji);
 const gloria = new Person('Gloria', 1994);
 console.log(gloria);
 
+// static method
+Person.hey = function () {
+  console.log('Hey there 🖐');
+  console.log(this);
+};
+
+Person.hey();
 // prototypes
 console.log(Person.prototype);
 Person.prototype.calcAge = function () {
@@ -51,6 +58,7 @@ console.log(arr.unique());
 const h1 = document.querySelector('h1');
 console.dir(h1);
 
+// ***********Classss*******************
 class PersonCl {
   constructor(fullName, birthYear) {
     this.fullName = fullName;
@@ -74,14 +82,21 @@ class PersonCl {
     if (name.includes(' ')) {
       this._fullName = name;
     } else {
-      alert(`${name} is not a full name`);
+      console.log(`${name} is not a full name`);
     }
   }
 
   get fullName() {
     return this._fullName;
   }
+
+  static hey() {
+    console.log('Hey there 🖐');
+    console.log(this);
+  }
 }
+
+PersonCl.hey();
 
 const chizoba = new PersonCl('Chizoba Ugwu', 1994);
 chizoba.calcAge();
