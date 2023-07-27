@@ -21,3 +21,21 @@ benz.accelerate();
 
 bmw.brake();
 benz.brake();
+
+// code challenge 2
+class CarCl {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
+
+  accelerate() {
+    this.speed += 10;
+    console.log(this.speed);
+  }
+
+  brake() {
+    this.speed -= 5;
+    console.log(this.speed);
+  }
+}
