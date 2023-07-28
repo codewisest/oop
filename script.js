@@ -9,13 +9,11 @@ const Student = function (firstName, birthYear, course) {
   this.course = course;
 };
 
+Student.prototype = Object.create(Person.prototype);
+
 Student.prototype.introduce = function () {
   console.log(`My name is ${this.firstName} and I study ${this.course}`);
 };
-
-const nathan = new Student('Nathan', 1987, 'Web Development');
-
-nathan.introduce();
 const chiji = new Person('Chiji', 1987);
 console.log(chiji);
 
@@ -34,6 +32,11 @@ console.log(Person.prototype);
 Person.prototype.calcAge = function () {
   console.log(2037 - this.birthyear);
 };
+
+const nathan = new Student('Nathan', 1987, 'Web Development');
+
+nathan.introduce();
+nathan.calcAge();
 
 Person.prototype.species = 'Homo Sapien';
 chiji.calcAge();
