@@ -4,6 +4,18 @@ const Person = function (firstName, birthyear) {
   this.birthyear = birthyear;
 };
 
+const Student = function (firstName, birthYear, course) {
+  Person.call(this, firstName, birthYear);
+  this.course = course;
+};
+
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+};
+
+const nathan = new Student('Nathan', 1987, 'Web Development');
+
+nathan.introduce();
 const chiji = new Person('Chiji', 1987);
 console.log(chiji);
 
