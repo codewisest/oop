@@ -111,6 +111,33 @@ class PersonCl {
   }
 }
 
+class StudentCl extends PersonCl {
+  constructor(fullName, birthYear, course) {
+    // always needs to happen first
+    super(fullName, birthYear);
+    this.course = course;
+  }
+
+  introduce() {
+    console.log(`My name is ${this._fullName} and I study ${this.course}`);
+  }
+
+  calcAge() {
+    console.log(
+      `I am a ${
+        2037 - this.birthYear
+      } years old student but I am a university student so I feel like I am ${
+        2037 - this.birthYear + 10
+      } years old`
+    );
+  }
+}
+
+const martha = new StudentCl('Martha Jones', 2012, 'Computer Science');
+martha.introduce();
+
+martha.calcAge();
+
 PersonCl.hey();
 
 const chizoba = new PersonCl('Chizoba Ugwu', 1994);

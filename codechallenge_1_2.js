@@ -81,3 +81,4 @@ const tesla = new CarEV('Tesla', 120, 80);
 
 tesla.chargeBattery(90);
 tesla.accelerate();
+tesla.brake();
