@@ -225,6 +225,17 @@ class Account {
   withdrawal(val) {
     this.deposit(-val);
   }
+
+  approveLoan(val) {
+    return true;
+  }
+
+  requestLoan(val) {
+    if (this.approveLoan(val)) {
+      this.deposit(val);
+      console.log('Loan approved');
+    }
+  }
 }
 
 const acc1 = new Account('Jonas', 'EUR', 1111);
@@ -232,4 +243,5 @@ console.log(acc1);
 
 acc1.deposit(450);
 acc1.withdrawal(140);
+acc1.requestLoan(500);
 console.log(acc1.movements);
