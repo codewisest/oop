@@ -37,6 +37,7 @@ class CarCl {
   brake() {
     this.speed -= 5;
     console.log(this.speed);
+    return this;
   }
 
   get speedUs() {
@@ -82,3 +83,32 @@ const tesla = new CarEV('Tesla', 120, 80);
 tesla.chargeBattery(90);
 tesla.accelerate();
 tesla.brake();
+
+// challenge 4
+class CarEVCL extends CarCl {
+  #batteryLevel;
+  constructor(make, speed, batteryLevel) {
+    super(make, speed);
+    this.#batteryLevel = batteryLevel;
+  }
+
+  accelerate() {
+    this.speed += 20;
+    this.#batteryLevel -= 1;
+    console.log(this);
+    console.log(
+      `Tesla going going at ${this.speed} Km/h with a charge of ${
+        this.#batteryLevel
+      }`
+    );
+    return this;
+  }
+
+  chargeBattery(chargeTo) {
+    this.#batteryLevel += chargeTo;
+    return this;
+  }
+}
+
+const latestCar = new CarEVCL('Rivian', 120, 40);
+latestCar.accelerate().chargeBattery(30).brake().accelerate();
